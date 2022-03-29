@@ -1,0 +1,13 @@
+vector<int> Solution::getRow(int A) {
+    if(A==0) return {1};
+    if(A==1) return {1,1};
+    int product=1;
+    vector<int>result;
+    result.push_back(1);
+    for(int i=1;i<=A;i++){
+        product*=(A-i+1);
+        product/=i;
+        result.push_back(product);
+    }
+    return result;
+}
