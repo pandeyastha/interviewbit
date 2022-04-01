@@ -1,0 +1,11 @@
+vector<int> Solution::intersect(const vector<int> &A, const vector<int> &B) {
+    int i=0,j=0;
+    vector<int>result;
+    while(i<A.size()&&j<B.size()){
+        if(A[i]==B[j] )result.push_back(A[i]);
+        int m=min(A[i],B[j]);
+        if(A[i]==m)i++;
+        if(B[j]==m)j++;
+    }
+    return result;
+}
